@@ -28,7 +28,7 @@ public class SistemaVotacao {
             System.out.println("4 - Exibir matriz de votos");
             System.out.println("5 - Sair");
 
-            opcao = lerInteiro("Opção:");
+            opcao = lerInteiro("Digite a opção desejada:");
 
             switch (opcao) {
                 case 1:
