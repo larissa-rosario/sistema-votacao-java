@@ -59,7 +59,7 @@ public class SistemaVotacao {
 
     static int lerInteiro(String mensagem) {
         while (true) {
-            System.out.print(mensagem);
+            System.out.print("Opção: ");
 
             if (scanner.hasNextInt()) {
                 int valor = scanner.nextInt();
