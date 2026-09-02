@@ -17,6 +17,18 @@ public class SistemaVotacao {
     static int[] quantidadeVotosTurma = new int[TOTAL_TURMAS];
     static int quantidadeCandidatos = 0;
 
+    static int buscarCandidato(int numero) {
+        int indiceEncontrado = -1;
+
+        for (int i = 0; i < quantidadeCandidatos; i++) {
+            if (numerosCandidatos[i] == numero) {
+                indiceEncontrado = i;
+                break;
+            }
+        }
+
+        return indiceEncontrado;
+    }
     public static void main(String[] args){
         int opcao;
 
@@ -129,11 +141,4 @@ public class SistemaVotacao {
                 break;
             }
         }
-
-
-
-
-
-
-
-
+    }
