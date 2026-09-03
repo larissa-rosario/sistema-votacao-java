@@ -39,6 +39,7 @@ public class SistemaVotacao {
         }
 
     }
+
     static void iniciarVotacao() {
         if (quantidadeCandidatos == 0) {
             System.out.println(
@@ -59,7 +60,7 @@ public class SistemaVotacao {
 
         int indiceTurma = turma - 1;
 
-        if (quantidadeVotosTurma[indiceTurma] >= MAX_VOTANTES_POR_TURMA) {
+        if (quantidadeVotosTurma[indiceTurma] >= MAX_VONTANTES_POR_TURMA) {
             System.out.println("Essa turma já atingiu o limite de votantes.");
             return;
         }
@@ -67,7 +68,7 @@ public class SistemaVotacao {
         mostrarCandidatos();
         System.out.println("\nDigite 0 para encerrar a votação desta turma.");
 
-        while (quantidadeVotosTurma[indiceTurma] < MAX_VOTANTES_POR_TURMA) {
+        while (quantidadeVotosTurma[indiceTurma] < MAX_VONTANTES_POR_TURMA) {
 
             int numero = lerInteiro("\nNúmero do candidato: ");
 
@@ -94,11 +95,28 @@ public class SistemaVotacao {
         }
 
         if (quantidadeVotosTurma[indiceTurma]
-                == MAX_VOTANTES_POR_TURMA) {
+                == MAX_VONTANTES_POR_TURMA) {
             System.out.println("Limite de 10 votantes atingido.");
         }
     }
 
+    static void exibirMatrizVotos() {
+        System.out.println("\n===== MATRIZ DE VOTOS =====");
+
+        for (int i = 0; i < TOTAL_TURMAS; i++) {
+            System.out.print("Turma " + (i + 1) + ": ");
+
+            for (int j = 0; j < MAX_VONTANTES_POR_TURMA; j++) {
+                if (j < quantidadeVotosTurma[i]) {
+                    System.out.print(votosPorTurma[i][j] + " ");
+                } else {
+                    System.out.print("- ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
     public static void main(String[] args){
         int opcao;
 
@@ -165,7 +183,7 @@ public class SistemaVotacao {
         }
     }
     static void cadastrarCandidatos() {
-        if ((quantidadeCandidatos > 0) {
+        if (quantidadeCandidatos > 0) {
             System.out.println("Os candidatos já foram cadastrados.");
             return;
         }
